@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Smileyan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.get("http://withyan.cn:8080/", function (data, status) {
+                // alert("数据: " + data + "\n状态: " + status);
+                $("body").append("<p class=\"container text-center\">积分："+data.score+"</p>");
+                $("body").append("<p class=\"container text-center\">排名："+data.place+"</p>");
+                $("body").append("<p class=\"container text-center\">访客："+data.visitor+"</p>");
+                $("body").append("<p class=\"container text-center\">等级："+data.grade+"</p>");
+            });
+        })
+    </script>
+</head>
+<body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1>Smileyan</h1>
+        <div class="container text-center" id="text">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
